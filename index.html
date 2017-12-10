@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html >
+<head>
+    <meta charset="utf-8" />
+    <title>Cisco-wszystko dla ciebie</title>
+
+    <style type="text/css">
+        .body {
+            border-top: 10px solid #049FD9;
+
+        }
+        #container {
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+           
+        }
+        .rectangle {
+            width: 960px;
+            margin: 20px;
+            text-align: center;
+        }
+        #zegarLayer {
+            font-size: 35px;
+            color: #049FD9;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-top:20px;
+        }
+
+        .border {
+            border-bottom: 10px solid grey;
+        }
+
+        #menu {
+            float: left;
+            width: 100%;
+            background: #fff;
+            margin-top:10px;
+            overflow: hidden;
+        }
+
+            #menu ul {
+                clear: left;
+                float: left;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: relative;
+                left: 50%;
+                text-align: center;
+            }
+
+                #menu ul li {
+                    display: block;
+                    float: left;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                    right: 50%;
+                    
+                }
+
+                    #menu ul li a {
+                        display: block;
+                        margin: 0 0 0 1px;
+                        padding: 3px 10px;
+                        background: #ddd;
+                        color: #000;
+                        text-decoration: none;
+                        line-height: 20px;
+                    }
+
+                        #menu ul li a:hover {
+                            background: #049FD9;
+                            color: #fff;
+                        }
+
+                        #menu ul li a.zaznaczony, #menu ul li a.zaznaczony:hover {
+                            color: #fff;
+                            background: #000;
+                            font-weight: bold;
+                        }
+                    #footer {
+                        clear: both;
+                        background-color: black;
+                        color: white;
+                        text-align: center;
+                        padding: 10px;
+                    }
+                 
+    </style>
+</head>
+
+<body onload="time();" class="body">
+    <div id="container">
+    <div class="rectangle">
+    <div ><img src="logo.png" /></div>
+    
+        <div id="zegarLayer">
+
+                    <script>
+                        function time() {
+                            var data = new Date();
+
+                            var day = data.getDate();
+                            var month = data.getMonth() + 1;
+                            var year = data.getFullYear();
+
+                            var hour = data.getHours();
+                            var minute = data.getMinutes();
+                            var second = data.getSeconds();
+
+                            if (minute < 10) minute = "0" + minute;
+                            if (second < 10) second = "0" + second;
+
+                            document.getElementById("zegarLayer").innerHTML =
+                                day + "." + month + "." + year + "|" + hour + ":" + minute + ":" + second;
+
+                            setTimeout("time()", 1000);
+
+
+                        }
+
+                    </script>
+                   
+         </div>
+         </div>
+         </div>
+            
+    <div class="border" style="clear:both;"></div>
+       
+    
+    <div id="menu">
+    <ul>
+        <li><a href="default.html">Home</a></li>
+        <li><a href="news.asp">News</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+    </ul>
+    </div>
+    <div style="clear:both;"></div>
+
+    <div class="map">
+    <img src="mapa.jpg" usemap="#mapa" style="height:100%; width:90%">
+    <map name="mapa">
+        <map name="mapa">
+            <area shape="rect" coords="2, 1, 7, 5 href="https://www.cisco.com/c/en/us/products/switches/catalyst-9300-series-switches/index.html" alt="Przełącznik serii 9300">
+            <area shape="rect" coords="51, 1, 100, 50" href="https://www.cisco.com/c/en/us/products/switches/catalyst-9400-series-switches/index.html" alt="Przełącznik serii 9400">
+            <area shape="rect" coords="1, 51, 51, 100" href="https://www.cisco.com/c/en/us/products/routers/4000-series-integrated-services-routers-isr/index.html" alt="Router z serii Cisco 4000">
+            <area shape="rect" coords="51, 51, 100, 100" href="https://www.cisco.com/c/en/us/products/routers/cloud-services-router-1000v-series/index.html" alt="Router Cisco Cloud Services serii 1000V">
+        </map> 
+    </map> 
+</div>
+
+    <div id="footer"> &copy; Wszelkie prawa zastrzeżone </div>
+</body>
+</html>
